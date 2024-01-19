@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch Sweet</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="assets/donut.png">
+</head>
+<body>
+    <div class="screen visible">
+        <button class="sound-btn" id="soundBtn"><img src="assets/sound-on.png" alt="Sound status" id="soundImg"></button>
+        <h2 class="game-title">Game "Catch Sweet"</h2>
+        <div class="records-container">
+            <span class="hider"></span>
+            <button class="record-list-btn" id="recordListBtn"><img src="assets/list-button.png" alt="кнопка выпадающего списка"></button>
+            <h3 style="z-index: 10;">Current records:</h3>
+        </div>
+        <ul class="scores-list visible" id="scoresList">
+            <li class="listScoreEl" value="-1">Score 10 - no result</li>
+            <li class="listScoreEl" value="-1">Score 50 - no result</li>
+            <li class="listScoreEl" value="-1">Score 100 - no result</li>
+            <li class="listScoreEl" value="-1">Max score - no result</li>
+        </ul>
+        <button class="btn start-btn" id="startBtn">Start</button>
+    </div>
+
+    <div class="screen">
+        <button class="arrow-back-btn" id="arrowBackBtn" value="1"><img src="assets/arrow-left.png" alt="Назад"></button>
+        <h2>Select the goal of the points:</h2>
+        <div class="score-btn-container">
+            <button class="btn score-btn" id="scoreBtn">10</button>
+            <button class="btn score-btn" id="scoreBtn">50</button>
+            <button class="btn score-btn" id="scoreBtn">100</button>
+            <button class="btn score-btn" id="scoreBtn">Inf</button>
+        </div>
+    </div>
+        
+    <div class="screen">
+        <button class="arrow-back-btn" id="arrowBackBtn" value="2"><img src="assets/arrow-left.png" alt="Назад"></button>
+        <h2>Choose your favorite sweet:</h2>
+        <ul class="container-sweet">
+            <li>
+                <button class="choose-sweet-btn">
+                    <p>Candy</p>
+                    <img src="./assets/candy.png" alt="Candy">
+                </button>
+            </li>
+            <li>
+                <button class="choose-sweet-btn">
+                    <p>Cake</p>
+                    <img src="./assets/cake-slice.png" alt="Cake">
+                </button>
+            </li>
+            <li>
+                <button class="choose-sweet-btn">
+                    <p>Donut</p>
+                    <img src="./assets/donut.png" alt="Donut">
+                </button>
+            </li>
+            <li>
+                <button class="choose-sweet-btn">
+                    <p>Cup Cake</p>
+                    <img src="./assets/cupcake.png" alt="CupCake">
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="screen game-container" id="game-container">
+        <div class="game-top-container" id="gameTopContainer">
+            <p class="time" id="time">Time: 0</p>
+            <button class="burger-menu-btn" id="burgerMenuBtn"><img id="burgerMenuImg" src="assets/burger-menu.png" alt="меню"></button>
+            <div class="game-top-container-buttons" id="gameTopContainerBtns">
+                <button class="pause-btn btn" id="pauseBtn">Pause</button>
+                <button class="finish-btn btn" id="finishBtn">Finish</button>
+            </div>
+            <p class="score" id="score">Score: 0</p>
+        </div>
+
+        <div class="finish-window" id="finishWindow">
+            <h3 id="congrateTitle">The game is over</h3>
+            <p id="scoredPts">You scored 0 pts</p>
+            <p id="tookTime">It took you 0 seconds</p>
+            <button class="btn" id="mainMenuBtn">Main menu</button>
+            <button class="btn" id="restartBtn">Restart game</button>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+    <audio src="./assets/30_catch_the_sweet_assets_bite.mp3" id="bite"></audio>
+</body>
+</html>

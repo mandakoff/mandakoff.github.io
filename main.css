@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@500&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    --primary-color: #d4a373;
+    --secondary-color: #fefae0;
+}
+
+body {
+    font-family: 'Shantell Sans', cursive;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    text-align: center;
+    margin: 0;
+}
+
+.screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.screen.visible {
+    display: flex;
+}
+
+.btn {
+    border: 0;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.game-title {
+    margin: 0 0 10px 0;
+    z-index: 10;
+}
+
+.sound-btn, .arrow-back-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.records-container {
+    display: flex;
+    margin: 10px 0;
+}
+
+.records-container h3 {
+    margin: 0;
+    margin-left: 5px;
+}
+
+.record-list-btn, .burger-menu-btn {
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    padding-top: 3px;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.1s;
+    z-index: 10;
+}
+
+.record-list-btn:hover {
+    opacity: 0.7;
+}
+
+.record-list-btn.active {
+    transform: rotate(180deg);
+}
+
+.record-list-btn img {
+    width: 15px;
+}
+
+.sound-btn img {
+    width: 30px;
+}
+
+.sound-btn img:hover {
+    opacity: 0.7;
+}
+
+.hider {
+    background-color: var(--secondary-color);
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    z-index: 1;
+}
+
+.scores-list {
+    display: none;
+    margin-top: 0;
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+    transform: translateY(-100%);
+    transition: 0.2s;
+}
+
+.listScoreEl {
+    transition: 0.2s;
+}
+
+.listScoreEl.active {
+    transform: translateY(400%);
+}
+
+.listScoreEl.second {
+    transform: translateY(400%);
+}
+
+.start-btn {
+    transform: translateY(-250%);
+    transition: 0.2s;
+}
+
+.scores-list.active, .start-btn.active {
+    transform: translateY(0);
+}
+
+.score-btn-container {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+}
+
+.score-btn {
+    margin: 10px 10px 0 10px;
+    width: 70px;
+}
+
+.arrow-back-btn img, .burger-menu-btn img {
+    width: 25px;
+}
+
+.container-sweet {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+}
+
+.choose-sweet-btn {
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    color: var(--primary-color);
+    margin: 10px;
+    margin-top: 0;
+    background-color: transparent;
+    width: 150px;
+    height: 150px;
+    font-family: inherit;
+    padding: 0;
+}
+
+.choose-sweet-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.choose-sweet-btn img {
+    width: 80px;
+}
+
+.time, .score {
+    margin: 10px 20px;
+}
+
+.game-container {
+    justify-content: start;
+}
+
+.game-top-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    top: 10px;
+}
+
+.game-top-container-buttons {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 100;
+}
+
+.game-top-container-buttons.visible {
+    display: flex;
+}
+
+.pause-btn {
+    margin-right: 5px;
+}
+
+.finish-btn {
+    margin-left: 5px;
+}
+
+.burger-menu-btn {
+    display: none;
+    padding: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sweet {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+
+.finish-window {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.finish-window button {
+    margin: 5px;
+}
+
+.finish-window.visible, .scores-list.visible {
+    display: block;
+}
+
+.pause-title {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    background-color: #d4a373;
+    color: #fefae0;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 100;
+}
+
+.pause-title.visible {
+    display: block;
+}
+
+
+@media (max-width: 420px) {
+    .game-top-container-buttons {
+        display: none;
+        transform: translate(-50%, 100%);
+    }
+
+    .burger-menu-btn {
+        display: block;
+    }
+}
